@@ -1,0 +1,43 @@
+{
+	"name": "kael",
+	"version": "0.1.0",
+	"description": "Enhanced personal AI chat client with project organization, custom profiles, prompt templates, and advanced workspace features for LLM interactions",
+	"author": "Carlos GM",
+	"license": "MIT",
+	"private": false,
+	"type": "module",
+	"keywords": [
+		"anthropic",
+		"claude",
+		"chat",
+		"serverless",
+		"aws",
+		"websocket",
+		"react",
+		"typescript"
+	],
+	"engines": {
+		"node": "24.x",
+		"pnpm": ">=9"
+	},
+	"scripts": {
+		"dev:frontend": "pnpm --filter @kael/frontend dev",
+		"dev:backend": "pnpm --filter @kael/backend dev",
+		"build": "pnpm -r build",
+		"test": "pnpm -r test",
+		"test:coverage": "pnpm -r test:coverage",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"type-check": "pnpm -r type-check",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.10",
+		"@commitlint/cli": "20.2.0",
+		"@commitlint/config-conventional": "20.2.0",
+		"@commitlint/types": "20.2.0",
+		"husky": "9.1.7",
+		"lint-staged": "16.2.7",
+		"typescript": "5.9.3"
+	}
+}

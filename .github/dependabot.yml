@@ -1,0 +1,97 @@
+version: 2
+
+updates:
+  # Root workspace
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      dev-tooling:
+        patterns:
+          - "@biomejs/*"
+          - "@commitlint/*"
+          - "husky"
+          - "lint-staged"
+          - "typescript"
+
+  # Backend (Lambda + CDK)
+  - package-ecosystem: npm
+    directory: /apps/backend
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      aws-cdk:
+        patterns:
+          - "aws-cdk*"
+          - "@aws-cdk/*"
+          - "constructs"
+      aws-sdk:
+        patterns:
+          - "@aws-sdk/*"
+      aws-lambda:
+        patterns:
+          - "@aws-lambda-powertools/*"
+      testing:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+          - "testcontainers"
+          - "@testcontainers/*"
+      types:
+        patterns:
+          - "@types/*"
+        update-types:
+          - minor
+          - patch
+
+  # Frontend (React)
+  - package-ecosystem: npm
+    directory: /apps/frontend
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react*"
+      vite:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      testing:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+          - "@testing-library/*"
+
+  # Shared package
+  - package-ecosystem: npm
+    directory: /packages/shared
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      zod:
+        patterns:
+          - "zod"
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5

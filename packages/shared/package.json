@@ -1,0 +1,21 @@
+{
+	"name": "@kael/shared",
+	"version": "0.1.0",
+	"description": "Shared Zod schemas and TypeScript types for Kael frontend and backend",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"type-check": "tsc --noEmit",
+		"test": "vitest run --passWithNoTests",
+		"test:coverage": "vitest run --coverage --passWithNoTests"
+	},
+	"dependencies": {
+		"zod": "4.2.1"
+	},
+	"devDependencies": {
+		"vitest": "4.0.16"
+	}
+}

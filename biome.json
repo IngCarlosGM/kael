@@ -1,0 +1,101 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+	"root": true,
+	"files": {
+		"includes": [
+			"**",
+			"!**/dist",
+			"!**/build",
+			"!**/coverage",
+			"!**/cdk.out",
+			"!**/.cdk.staging",
+			"!!**/.claude",
+			"!!**/node_modules",
+			"!!**/pnpm-lock.yaml"
+		]
+	},
+	"vcs": {
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"useExhaustiveDependencies": "off"
+			},
+			"suspicious": {
+				"noConsole": "warn",
+				"noDebugger": "error",
+				"noImplicitAnyLet": "error"
+			},
+			"style": {
+				"useImportType": "off",
+				"useConsistentArrayType": {
+					"level": "warn",
+					"options": { "syntax": "shorthand" }
+				},
+				"useFilenamingConvention": {
+					"level": "warn",
+					"options": {
+						"filenameCases": ["camelCase", "PascalCase", "kebab-case"]
+					}
+				}
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 100,
+		"bracketSpacing": true
+	},
+	"javascript": {
+		"jsxRuntime": "transparent",
+		"formatter": {
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "single",
+			"trailingCommas": "all"
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		}
+	},
+	"overrides": [
+		{ "includes": ["**/*.css"], "linter": { "enabled": false } },
+		{
+			"includes": ["**/*.test.*", "**/*.spec.*", "**/__tests__/**"],
+			"linter": {
+				"rules": {
+					"suspicious": { "noConsole": "off", "noFocusedTests": "error" },
+					"style": { "useImportType": "off" }
+				}
+			}
+		}
+	],
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							[":NODE:", ":PACKAGE:", "!@kael", "!@/*"],
+							":BLANK_LINE:",
+							{ "type": true },
+							":BLANK_LINE:",
+							["@kael/**"],
+							":BLANK_LINE:",
+							["@/**"],
+							":PATH:"
+						]
+					}
+				}
+			}
+		}
+	}
+}

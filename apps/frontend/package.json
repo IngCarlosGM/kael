@@ -1,0 +1,36 @@
+{
+	"name": "@kael/frontend",
+	"version": "0.1.0",
+	"description": "React frontend for Kael chat client with real-time WebSocket support",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"test": "vitest run --passWithNoTests",
+		"test:coverage": "vitest run --coverage --passWithNoTests",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@kael/shared": "workspace:*",
+		"@tanstack/react-query": "5.90.15",
+		"react": "19.2.3",
+		"react-dom": "19.2.3",
+		"react-router-dom": "7.11.0",
+		"zustand": "5.0.9"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "4.1.18",
+		"@testing-library/jest-dom": "6.9.1",
+		"@testing-library/react": "16.3.1",
+		"@types/react": "19.2.7",
+		"@types/react-dom": "19.2.3",
+		"@vitejs/plugin-react": "5.1.2",
+		"jsdom": "27.4.0",
+		"postcss": "8.5.6",
+		"tailwindcss": "4.1.18",
+		"vite": "7.3.0",
+		"vitest": "4.0.16"
+	}
+}
