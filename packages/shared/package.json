@@ -13,7 +13,7 @@
 		"test:coverage": "vitest run --coverage --passWithNoTests"
 	},
 	"dependencies": {
-		"zod": "4.3.4"
+		"zod": "4.3.5"
 	},
 	"devDependencies": {
 		"vitest": "4.0.16"
